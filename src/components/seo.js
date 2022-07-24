@@ -69,6 +69,7 @@ function Seo({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+      
     />
   )
 }
