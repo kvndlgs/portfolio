@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Kevin Desloges | Graphic Designer | Front End Developer`,
+    title: `KVDS`,
     description: `Portfolio.`,
     author: `@kvndlgs`,
     siteUrl: `https://kvds.me`,
@@ -16,6 +16,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
