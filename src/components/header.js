@@ -147,10 +147,10 @@ function Menu() {
       <Link to="/projects">
         PROJETS
       </Link>
-      <Link to="/projects">
+      <Link to="/services">
         SERVICES
       </Link>
-      <Link to="/projects">
+      <Link to="/about">
         WHOAMI
       </Link>
       <Link to="/contact">

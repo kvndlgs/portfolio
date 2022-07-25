@@ -1,7 +1,8 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import {createGlobalStyle, ThemeProvider } from 'styled-components'
+import Seo from './seo';
 import { theme } from '../theme'
 import Header from "./header"
 import 'normalize.css';
@@ -37,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${theme.fonts.sansSerif};
     padding: ${theme.space[4]};
     letter-spacing: 2px;
+    font-optical-sizing: auto;
    }
    h1 {
     font-size: 67.34px;
@@ -61,6 +63,13 @@ const GlobalStyle = createGlobalStyle`
     font-size: 88%;
     letter-spacing: 1.5px;
   }
+
+  footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: ${theme.space[2]};
+  }
 `
 
 
@@ -76,6 +85,7 @@ const WrappedLayout = ({children}) => {
 
 
 const Layout = ({ children }) => {
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -89,13 +99,11 @@ const Layout = ({ children }) => {
   return (
   
     <WrappedLayout>
-      <Header />
-
+      <Seo title={data.site.siteMetadata?.title || `Title`} />
+       <Header />
         <main>{children}</main>
-        <footer
-        >
+        <footer>
         Kevin Desloges © {new Date().getFullYear()}
-          {` `}
         </footer>
         </WrappedLayout>
   )
