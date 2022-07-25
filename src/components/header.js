@@ -54,8 +54,9 @@ const StyledMenu = styled.nav`
  background: #fff;
  justify-content: space-between;
  padding: ${theme.space[3] + 'px'} ${theme.space[4] + 'px'};
- @media(max-width:1024px) {
+ @media(max-width:${theme.breakpoints[2]+'px'}) {
   height: auto;
+  padding: ${theme.space[3] + 'px'} ${theme.space[3]+ 'px'};
  }
   .start {
    display: flex;

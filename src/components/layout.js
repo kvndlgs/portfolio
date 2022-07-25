@@ -5,6 +5,7 @@ import {createGlobalStyle, ThemeProvider } from 'styled-components'
 import Seo from './seo';
 import { theme } from '../theme'
 import Header from "./header"
+import Footer from './footer';
 import 'normalize.css';
 import '../css/typography.css';
 
@@ -19,56 +20,58 @@ const GlobalStyle = createGlobalStyle`
   }
  }
  html {
-  font-size: 16px;
+  font-size: 96%;
+  @media(max-width: 1024px) {
+    font-size: 82%;
+  }
  }
   body {
     padding: 0;
     margin:0;
-    font-family: ${theme.fonts.sansSerif}
+    font-family: ${theme.fonts.sansSerif};
+    line-height: ${theme.lineHeights.body};
   }
 
    a {
-    font-size: 90%;
-    font-weight:${theme.fontWeights[2]};
-    letter-spacing: 1.5px;
+    font-size: 1rem !important;
+    color: ${theme.colors.secondary};
+    letter-spacing: 1.1px;
     text-decoration: none;
+    font-weight: 700;
    }
 
    h1, h2, h3, h4, h5 {
-    font-family: ${theme.fonts.sansSerif};
-    padding: ${theme.space[4]};
+    padding: ${theme.space[4]+'px'};
     letter-spacing: 2px;
     font-optical-sizing: auto;
+    line-height: ${theme.lineHeights.heading};
    }
    h1 {
-    font-size: 67.34px;
-    font-weight: ${theme.fontWeights[6]};
+    margin-top: 0;
+    font-size: 3.052rem !important;
+    font-weight: 700;
    }
    h2 {
-    font-size: 50.52px;
+    font-size: 2.441rem !important;
+    font-weigth: 600;
    }
    h3 {
-    font-size: 37.9px;
+    font-size: 1.953rem !important;
    }
    h4 {
-    font-size: 28.43px;
+    font-size: 1.563rem !important;
    }
    h5 {
-    font-size: 21.33px;
-    font-weight: ${theme.fontWeights[4]};
+    font-size: 1.25rem !important;
    }
    p {
-    font-family: ${theme.fonts.sansSerif};
-    font-weight: ${theme.fontWeights[1]};
-    font-size: 88%;
+    font-size: 0.8rem !important;
     letter-spacing: 1.5px;
   }
 
-  footer {
-    width: 100%;
-    height: auto;
-    display: flex;
-    padding: ${theme.space[2]};
+  small, .text_small {
+    font-size: 0.76rem !important;
+    font-weight: 700;
   }
 `
 
@@ -99,12 +102,10 @@ const Layout = ({ children }) => {
   return (
   
     <WrappedLayout>
-      <Seo title={data.site.siteMetadata?.title || `Title`} />
+      <Seo title={`Title` | data.site.siteMetadata?.title } />
        <Header />
         <main>{children}</main>
-        <footer>
-        Kevin Desloges © {new Date().getFullYear()}
-        </footer>
+        <Footer />
         </WrappedLayout>
   )
 }
