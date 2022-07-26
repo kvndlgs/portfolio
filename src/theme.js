@@ -16,5 +16,6 @@ export const theme = {
       primary: '#CBA6FE',
       secondary: '#3D1556',
       thiercary: '#FF7392',
+      title: '#CDDEDD',
     }
 }
