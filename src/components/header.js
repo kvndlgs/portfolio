@@ -54,26 +54,32 @@ const StyledMenu = styled.nav`
  background: #fff;
  justify-content: space-between;
  padding: ${theme.space[3] + 'px'} ${theme.space[4] + 'px'};
- @media(max-width:${theme.breakpoints[2]+'px'}) {
+
+ /* menu media queries */
+ @media(max-width: 960px) {
   height: auto;
   padding: ${theme.space[3] + 'px'} ${theme.space[3]+ 'px'};
  }
   .start {
    display: flex;
-   height: 100%;
-   align-items: stretch;
+   align-items:center;
+   padding:0;
+   margin:0;
+   justify-content:center;
+   a {
+    height: 50px;
+   }
   }
 
  .end {
   display: flex;
   justify-content: space-around;
-  align-items: stretch;
   margin: 0 -0.1rem;
   &.open {
     display: flex;
   }
   a {
-    align-self: stretch;
+    align-self: center;
     margin: 0 ${theme.space[3] + 'px'};
     text-decoration: none;
     color: ${theme.colors.secondary};
@@ -81,13 +87,13 @@ const StyledMenu = styled.nav`
       color: ${theme.colors.primary};
     }
   }
-  @media(max-width:1024px) {
+  @media(max-width:960px) {
     display: none;
     flex-direction: column;
     justify-content: space-around;
     text-align: center;
     height: calc(100% - 85px);
-    top:85px;
+    top:82px;
     bottom:0;
     left:0;
     width:100vw;
@@ -117,7 +123,6 @@ const StyledMenu = styled.nav`
       }
     }
   }
- }
 }
 `
 
@@ -128,7 +133,7 @@ function Menu() {
     <StyledMenu>
       <div className="start">
       <Link to="/">
-      <svg  version="1.1" width="50px"  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" >
+      <svg  version="1.1" width="50px" height="50px"  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" >
             <g >
                 <g >
                     <g >

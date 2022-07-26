@@ -41,8 +41,7 @@ const GlobalStyle = createGlobalStyle`
    }
 
    h1, h2, h3, h4, h5 {
-    padding: ${theme.space[4]+'px'};
-    letter-spacing: 2px;
+    letter-spacing: 1.6px;
     font-optical-sizing: auto;
     line-height: ${theme.lineHeights.heading};
    }
@@ -53,16 +52,18 @@ const GlobalStyle = createGlobalStyle`
    }
    h2 {
     font-size: 2.441rem !important;
-    font-weigth: 600;
+    font-weight: 600;
    }
    h3 {
     font-size: 1.953rem !important;
    }
    h4 {
     font-size: 1.563rem !important;
+    font-weight:400;
    }
    h5 {
     font-size: 1.25rem !important;
+    font-weight:200;
    }
    p {
     font-size: 0.8rem !important;

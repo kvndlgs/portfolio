@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `KVDS`,
+    title: `Kevin Desloges`,
     description: `Portfolio.`,
     author: `@kvndlgs`,
     siteUrl: `https://kvds.me`,
@@ -25,10 +25,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`,
+      },
+    },
+    {
     resolve: `gatsby-plugin-styled-components`,
     options: {
       disableVendorPrefixes: true,
-      displayName: true,
+      displayName: false,
     },
     },
     {
@@ -37,7 +44,7 @@ module.exports = {
         name: `Kevin Desloges portfolio`,
         short_name: `Graphic designer and front end developer`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#3D1556`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,

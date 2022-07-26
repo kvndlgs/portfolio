@@ -13,7 +13,7 @@ export const theme = {
         serif: '',
     },
     colors: {
-      primary: '#E5C1FB',
+      primary: '#CBA6FE',
       secondary: '#3D1556',
       thiercary: '#FF7392',
     }
