@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^15.13.1",
     "@parcel/namer-default": "^2.5.0",
     "babel-plugin-styled-components": "^2.0.7",
     "dotenv": "^16.0.1",
@@ -18,9 +19,11 @@
     "gatsby-plugin-sharp": "^4.18.0",
     "gatsby-plugin-sitemap": "^5.18.1",
     "gatsby-plugin-styled-components": "^5.19.0",
-    "gatsby-source-contentful": "^7.16.1",
+    "gatsby-plugin-vanilla-extract": "^2.0.1",
+    "gatsby-source-contentful": "^7.17.0",
     "gatsby-source-filesystem": "^4.18.1",
     "gatsby-transformer-json": "^4.19.0",
+    "gatsby-transformer-remark": "^5.19.0",
     "gatsby-transformer-sharp": "^4.18.0",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
@@ -33,6 +36,11 @@
     "system-components": "^3.0.3"
   },
   "devDependencies": {
+    "chalk": "^5.0.1",
+    "contentful-cli": "^1.14.24",
+    "contentful-import": "^8.3.2",
+    "gatsby-provision-contentful": "0.0.3",
+    "inquirer": "^9.0.2",
     "prettier": "^2.7.1"
   },
   "keywords": [
@@ -46,6 +54,9 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "gatsby-provision": "gatsby-provision-contentful --contentful-data-path=''./scripts/data.json' --space-id=$CONTENTFUL_SPACE_ID --management-token=$CONTENTFUL_MANAGEMENT_TOKEN",
+    "setup": "node ./scripts/setup.js",
+    "export-content": "contentful space export --space-id=$SPACE_ID --management-token=$MANAGEMENT_TOKEN --export-dir=scripts --content-file=data.json",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {

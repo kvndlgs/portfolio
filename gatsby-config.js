@@ -1,5 +1,6 @@
+require('dotenv').config()
 require('dotenv').config({
-  path: `.env${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`
 })
 
 module.exports = {
@@ -18,17 +19,12 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-json`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `${__dirname}/src/data/`,
+        downloadLocal: true,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        host: process.env.CONTENTFUL_HOTST,
       },
     },
     {
@@ -49,7 +45,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `src/images/kd.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
