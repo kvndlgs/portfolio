@@ -60,10 +60,16 @@ const Hero = styled.div`
     }
   }
   @media(max-width: 960px) {
+    h2, h3 {
+        font-size: 80%;
+    }
     width: 100% !important;
-    padding: ${theme.space[3]+'px'} ${theme.space[3]+'px'};
+    padding: ${theme.space[4]+'px'} ${theme.space[3]+'px'};
     justify-content: center;
     align-items:center;
+    img {
+        display: none;
+    }
   }
  }
 `
