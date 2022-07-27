@@ -53,7 +53,8 @@ const StyledMenu = styled.nav`
  max-width: 100vw;
  background: #fff;
  justify-content: space-between;
- padding: ${theme.space[3] + 'px'} ${theme.space[4] + 'px'};
+ padding: ${theme.space[3] + 'px'} ${theme.space[5] + 'px'};
+ box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 
  /* menu media queries */
  @media(max-width: 960px) {
@@ -137,7 +138,7 @@ function Menu() {
             <g >
                 <g >
                     <g >
-                        <circle fill="#320C49" className="circle" cx="256" cy="256" r="256" />
+                        <circle fill="#3D1556" className="circle" cx="256" cy="256" r="256" />
                     </g>
                     <g >
                     </g>

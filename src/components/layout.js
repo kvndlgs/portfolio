@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
  html {
   font-size: 96%;
   @media(max-width: 1024px) {
-    font-size: 82%;
+    font-size: 86%;
   }
  }
   body {
@@ -33,9 +33,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
    a {
-    font-size: 1rem !important;
+    font-size: 0.92rem !important;
     color: ${theme.colors.secondary};
-    letter-spacing: 1.1px;
+    letter-spacing: 1.6px;
     text-decoration: none;
     font-weight: 700;
    }
