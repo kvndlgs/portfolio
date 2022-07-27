@@ -13,7 +13,7 @@ export default function Project({projectName}) {
 
 
 export const pageQuery = graphql`
- query projectQuery($projectName: String!){
+ query projectQuery($projectName: String){
     contentfulProject(projectName: {eq: $projectName}) {
         projectName
     }
