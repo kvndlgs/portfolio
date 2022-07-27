@@ -8,7 +8,6 @@ import Seo from '../components/seo';
 const ProjectList = styled.div`
   margin:0;
   padding:${theme.space[3]+'px'} ${theme.space[5]+'px'};
-  margin: ${theme.space[2]+'px'};
   width: 100vw;
   height: auto;
   display: flex;
@@ -27,6 +26,7 @@ const ProjectList = styled.div`
 const ProjectListItem = styled.div`
  display: flex;
  flex-direction: column;
+ margin: ${theme.space[2]+'px';
  a  {
     img {
     max-width: 320px;
