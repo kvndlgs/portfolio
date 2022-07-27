@@ -4,7 +4,8 @@ import Layout from "../components/layout";
 import { theme } from '../theme';
 import Seo from "../components/seo";
 import Nuke from '../images/nuke.png';
-// import { Link } from "gatsby";
+// import { graphql } from "gatsby";
+
 
 const Hero = styled.div`
  width: 100%;
@@ -68,22 +69,23 @@ const Hero = styled.div`
 `
 
 
-const IndexPage = () => (
+function IndexPage() {
+  return (
   <Layout>
     <Seo title="Portfolio" />
     <Hero>
       <div className="hero-item">
         <div className="text">
-        <h2> HELLO, I'M KEVIN. <br /> A FRONT END DEVELOPER <br /> & GRAPHIC DESIGNER <br /> FROM QUEBEC, CANADA. </h2>
-        <h5> Crafting tailored, lovely websites and brands that works.</h5>
+        <h2>  HELLO, I'M KEVIN. A FRONT END DEV  & GRAPHIC DESIGNER FROM QUEBEC, CANADA.  </h2>
+        <h5> Crafting tailored websites and lovely brands.</h5>
         </div>
       </div>
       <div className="hero-item">
-        <img src={Nuke} alt="nuke" />
+        <img src={Nuke} alt="yo"/>
       </div>
-
     </Hero>
   </Layout>
-)
+  )
+ }
 
 export default IndexPage

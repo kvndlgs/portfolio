@@ -3,19 +3,19 @@ import * as React from 'react';
 import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 
-export default function Project({props}) {
-    const { title } = props.data.contentfulProject;
+export default function Project({projectName}) {
     return (
         <Layout>
-             <h2> { title }</h2>
+             <h2> { projectName }</h2>
         </Layout>
     )
 }
 
+
 export const pageQuery = graphql`
- query projectQuery($title: String!){
-    contentfulProject(title: {eq: $title}) {
-        title
+ query projectQuery($projectName: String!){
+    contentfulProject(projectName: {eq: $projectName}) {
+        projectName
     }
  }
 `

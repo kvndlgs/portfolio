@@ -12,8 +12,7 @@ exports.createPages = ({graphql, actions}) => {
             node {
               id
               title
-              type
-              category
+              projectName
             }
           }
         }
@@ -22,10 +21,13 @@ exports.createPages = ({graphql, actions}) => {
         if(result.errors) {
           reject(result.errors)
         }
-        result.data.allContentfulProject.edges.forEach((edge) => {
+        result.data.allContentfulProject.edges.forEach((project) => {
           createPage({
-            path: edge.node.id,
+            path: `/projects/${project.node.projectName}`,
             component: projectTemplate,
+            context: {
+              name: project.node.projectName,
+            }
           })
         })
         return
