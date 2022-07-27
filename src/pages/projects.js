@@ -7,15 +7,16 @@ import Seo from '../components/seo';
 
 const ProjectList = styled.div`
   margin:0;
-  padding:${theme.space[3]+'px'} ${theme.space[5]+'px'};
+  padding:${theme.space[4]+'px'} ${theme.space[5]+'px'};
   width: 100vw;
   height: auto;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
   @media(max-width:960px) {
     flex-direction: column;
-    padding: ${theme.space[2]+'px'};
-    width: 100%;
+    padding: ${theme.space[4]+'px'} ${theme.space[2]+'px'};
     height: auto;
     align-items:center;
     justify-content:center;
@@ -26,20 +27,26 @@ const ProjectList = styled.div`
 const ProjectListItem = styled.div`
  display: flex;
  flex-direction: column;
- margin: ${theme.space[2]+'px';
+ padding: ${theme.space[2]+'px'};
  a  {
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    border-radius: 18px;
+    border:5px solid #f1f1f1;
+    background: transparent;
     img {
-    max-width: 320px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    max-width: 300px;
     }
  }
 `
 
-const Project = ({project}) => {
+const ProjectLink = ({project}) => {
     return (
         <ProjectListItem>
-            <h4> { project.title }</h4>
             <Link to={`/projects/${project.projectName}`}><img src={project.thumbnailImage.url} alt={project.projectName} /> </Link>
+            <h4> { project.title }</h4>
         </ProjectListItem>
     )
 }
@@ -49,9 +56,10 @@ export default function Projects({data}) {
     return (
         <Layout>
             <Seo title="Projects" />
+            <h2>PROJECTS</h2> 
         <ProjectList>
             {data.allContentfulProject.edges.map((project) => 
-             <Project project={project.node} />
+             <ProjectLink project={project.node} />
             )}
         </ProjectList>
         </Layout>
